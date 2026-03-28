@@ -1,9 +1,12 @@
 version: 2
 
 sources:
-  - name: gz_raw_data # Este es el alias que usaremos en dbt
-    dataset: gz_raw_data # Nombre real del dataset en BigQuery
+  - name: raw # Este es el nuevo nombre (alias) para el dataset
+    dataset: gz_raw_data # Este es el nombre real en BigQuery
     tables:
-      - name: raw_gz_sales
-      - name: raw_gz_product
-      - name: raw_gz_ship
+      - name: sales # Cómo lo llamarás en dbt
+        identifier: raw_gz_sales # Nombre real de la tabla en BigQuery
+      - name: product
+        identifier: raw_gz_product
+      - name: ship
+        identifier: raw_gz_ship
